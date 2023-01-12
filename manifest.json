@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+  "name": "chat_md",
+  "version": "1.0",
+  "description": "An Extension to copy ChatGPT Chats to Clipboard",
+
+  "permissions": [
+    "clipboardWrite",
+    "https://chat.openai.com/chat/*"
+  ],
+
+  "content_scripts": [
+    {
+      "matches": ["https://chat.openai.com/chat/*"],
+      "js": ["download.js"]
+    }
+  ],
+
+  "browser_action": {
+    "default_popup": "popup.html"
+  }
+}
