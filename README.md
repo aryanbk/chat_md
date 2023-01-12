@@ -1,0 +1,1 @@
+ An Extension that enables you to copy and download chats from ChatGPT in markdown formate.
