@@ -1,9 +1,9 @@
 # ChatGPT Markdown Exporter - Browser Extension
 This browser extension allows you to copy and download chats from ChatGPT in markdown format.
 
-![extension popup window](https://i.imgur.com/0Cazrni.png)
+![extension popup window](https://i.imgur.com/0Cazrni.png){ width=582 height=315 }
 
-![downloaded file](https://i.imgur.com/VnWk8Xc.png)
+![downloaded file](https://i.imgur.com/VnWk8Xc.png){ width=582 height=315 }
 
 ## Features
 - Copy and download chats from ChatGPT in markdown format.
