@@ -1,3 +1,4 @@
+// A function to copy text to clipboard
 function copyToClipboard(text) {
   navigator.clipboard.writeText(text)
     .catch((error) => {
@@ -6,7 +7,7 @@ function copyToClipboard(text) {
 }
 
 function save(data, filename) {
-	if (!filename) filename = "chat.md";
+	if (!filename) filename = `${data.slice(1, 11)}.md`;
 
 	var blob = new Blob([data], {
 		type: "text/plain"
@@ -40,18 +41,24 @@ function save(data, filename) {
 
 
 
+// Execute the content script
 chrome.tabs.executeScript(null, {
 	file: "download.js"
 });
 
+// Add a listener to receive messages from the content script
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 	if (request.text) {
+		// Call the copyToClipboard function inside a user-initiated event
 		document.getElementById('copyBtn').addEventListener('click', function() {
 			copyToClipboard(request.text);
 		});
 		document.getElementById('dlBtn').addEventListener('click', function() {
-			save(request.text, "chat.md");
+			save(request.text, `${request.text.slice(1, 11)}.md`);
 		});
 
+	}
+	else{
+		console.log("no text found");
 	}
 });
